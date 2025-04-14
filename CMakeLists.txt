@@ -8,3 +8,5 @@ add_compile_options(-Wall -Wextra -pedantic -Werror)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -std=c++20")
 
 add_executable(MyVim main.cpp)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

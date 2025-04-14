@@ -1,7 +1,8 @@
-# include <iostream>
+#include <unistd.h>
 
-int main(void)
-{
-    std::cout << "Hello, MyVim" << "\n";
-    return 0;
+int main() {
+  char input;
+  while (read(STDIN_FILENO, &input, 1) == 1)
+    ;
+  return 0;
 }

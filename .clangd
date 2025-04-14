@@ -1,0 +1,34 @@
+Diagnostics: #诊断
+  ClangTidy:
+    Add: ["*"]
+    Remove:
+      [
+        abseil*,
+        fuchsia*,
+        llvmlib*,
+        zircon*,
+        altera*,
+        google-readability-todo,
+        readability-braces-around-statements,
+        hicpp-braces-around-statements,
+        modernize-use-trailing-return-type, # 不要每个都加上尾返回值类型
+        readability-identifier-length, # 不检查变量名长度
+        cppcoreguidelines-avoid-magic-numbers, # 不检查魔法数字
+        readability-magic-numbers, #同上
+      ]
+
+Index: #索引
+  Background: Build
+
+CompileFlags: # 编译选项
+  Add: [-std=c++20, -Wall, -xc++]
+  # Add里面也可以增加你想要包含的头文件路径
+  Compiler: clang++
+
+InlayHints:
+  BlockEnd: No
+  Designators: Yes
+  Enabled: Yes
+  ParameterNames: No
+  DeducedTypes: Yes
+  TypeNameLimit: 24
